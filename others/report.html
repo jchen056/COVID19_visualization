@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Visualization of Covid-19 Vaccination</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Coronavirus (COVID-19) Vaccinations</h1>
+            <div class="row">
+                <p>COVID-19 vaccines help not only protect against severe illness, hospitalization, and death, but also protect against infection. Even though people who are vaccinated may still get COVID-19, 
+                    they are much less likely to experience severe symptoms than people who are unvaccinated. The scenario in which people who are vaccinated get COVID-19 is referred to as a “<b>vaccine breakthrough infection</b>.”</br>
+                    In this blog post, we are going to examine the breakthrough Covid-19 infection. </p>                
+            </div>
+
+            <div class="row">
+                <h3>Data</h3>
+                <p>We are provided with three datasets:<br/>
+                    <ol><li><a href="https://www.healthdata.org/covid/covid-19-vaccine-efficacy-summary">"Covid-19 Vaccine Efficacy.xlsx"</a></li>
+                        <li>"vaccination-data-WHO-12-28-2022-NO-DETAILS for-vaciinetype-date.xlsx"</li>
+                        <li>"owid-covid-data-ALL-COUNTRIES.xlsx"</li>
+                    </ol>
+                </p>
+                <p>The first dataset is about <b>vaccine efficacy</b>, which measures the effectiveness of vaccines against infection and symptomatic and severe disease(hospitalization and death). As we can see from the table below,
+                the effectiveness wanes over time as new variants emerge.</p>
+                <a href="https://www.healthdata.org/covid/covid-19-vaccine-efficacy-summary" target="_blank"><img src="data/vaccine_efficacy.png" alt="COVID-19 vaccine efficacy summary"></a>
+                <p>The second data set</p>
+            </div>
+
+            <div class="row">
+                <h3>Where are Vaccines Administered Distributed?</h3>
+                <iframe src="iframe/vaccine_distribution.html" style="width:100%; aspect-ratio:2;" title="Vaccination Distribution"></iframe>
+                <div class="column">
+                    <a href="iframe/AstraZeneca.html" target="_blank"><img src="iframe/AstraZeneca.png" alt="AstraZeneca Distribution"></a>
+                    <a href="iframe/BBIBP.html" target="_blank"><img src="iframe/BBIBP.png" alt="BBIBP Distribution"></a>
+                    <a href="iframe/Janssen.html" target="_blank"><img src="iframe/JJ.png" alt="Johnson & Johnson Distribution"></a>
+            
+                </div>
+                <div class="column">
+                    
+                    <a href="iframe/Pfizer.html" target="_blank"><img src="iframe/Pfizer.png" alt="Pfizer Distribution"></a>
+                    <a href="iframe/Gamaleya.html" target="_blank"><img src="iframe/Gamaleya.png" alt="Gamaleya Distribution"></a>
+                    <a href="iframe/Bharat.html" target="_blank"><img src="iframe/Bharat.png" alt="Bharat Distribution"></a>
+                </div>
+                <div class="column">
+                    <a href="iframe/Moderna.html" target="_blank"><img src="iframe/Moderna.png" alt="Moderena Distribution"></a>
+                    <a href="iframe/Sinovac.html" target="_blank"><img src="iframe/Sinovac.png" alt="Sinovac Distribution"></a>
+                    <a href="iframe/Novavax.html" target="_blank"><img src="iframe/Novavax.png" alt="Novavax Distribution"></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h3>Relationship between Population and Vaccine Doses</h3>
+                <div class="column">
+                    <img src="iframe/Pop_Est.png" alt="Population by Country">
+                    <img src="iframe/Total_Vaccinations.png" alt="Total Vaccinations by Country">
+                    <img src="iframe/Persons_Fully_Vaccinated.png" alt="Persons Fully Vaccinated by Country">
+                </div>
+                <div class="column">
+                    <img src="iframe/GDP_per_capita.png" alt="GDP per capita by Country">
+                    <img src="iframe/Total_Vaccinations_Per100.png" alt="Total Vacccination Per100 by Country">
+                    <img src="iframe/Persons_Fully_Vaccinated_Per100.png" alt="Persons Fully Vaccinated Per100 by Country">
+                </div>
+                <div class="column">
+                    
+                </div>
+            </div>
+            <div>
+    </body>
+    </html>
