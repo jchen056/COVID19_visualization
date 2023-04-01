@@ -6,6 +6,7 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import plotly.graph_objects as go
 
+st.sidebar.markdown("Vaccine Effficacy")
 st.header("COVID-19 Vaccine Efficacy Data Manipulation")
 st.markdown('''We are going to take a look at **vaccine efficacy**, which measures the effectiveness of vaccines against infection and symptomatic and severe disease (hospitalization and death). 
 1. We will inspect COVID-19 vaccine efficacy summary table. The vaccine efficacy data on the table is compiled from various peer-reviewed reports and news articles since June 2021.

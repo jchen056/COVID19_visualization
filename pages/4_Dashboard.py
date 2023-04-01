@@ -7,7 +7,8 @@ import plotly.graph_objects as go
 from streamlit_folium import st_folium
 from plotly.subplots import make_subplots
 
-
+st.header("COVID-19 Data Explorer")
+st.sidebar.markdown("Dashboard")
 df_vaccine = pd.read_excel(
     'data/vaccination-data-WHO-12-28-2022-NO-DETAILS for-vaciinetype-date.xlsx')
 df_vaccine = df_vaccine[df_vaccine["COUNTRY"] != "Eritrea"]

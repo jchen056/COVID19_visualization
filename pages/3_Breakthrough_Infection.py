@@ -8,6 +8,7 @@ from streamlit_folium import st_folium
 from plotly.subplots import make_subplots
 
 st.header("Breakthrough COVID-19 Infection")
+st.sidebar.markdown("Breakthrough Infection")
 st.markdown("""Previously, we have computed (1)**% People Fully Vaccinated** and (2)**Average Vaccine Efficacy** for Different Countries in the World.
 In this section, we are going to compute the breakthrough infection and visualize breakthrough infection.""")
 
