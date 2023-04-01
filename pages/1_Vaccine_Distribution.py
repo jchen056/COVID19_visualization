@@ -154,15 +154,6 @@ with tb2:
     fig.update_layout(title="% People Vaccinated by Continents")
     st.plotly_chart(fig)
 
-    m = world.explore(
-        column="% People Fully Vaccinated",
-        legend=True,  # show legend
-        tooltip=["name"],  # show value in tooltip (on hover)
-        popup=["name", "Persons_Fully_Vaccinated", "% People Fully Vaccinated",
-               "persons_vaccinated", "% People Vaccinated"],  # show all values in popup (on click)
-    )
-    m.save("iframe/Vaccine_Dist_PPL_Vacc.html")
-
     st.subheader("Additional Notes: All about Population")
     st.markdown("""
     The vaccination figures on this page may look different from the ones reported by governments. 
@@ -174,8 +165,8 @@ with tb3:
     st.subheader("Vaccination Rates Are Low in Africa")
     st.caption(
         'These maps are no longer being updated. Data is as of December 28, 2022.')
-    tab1, tab3, tab2 = st.tabs(
-        ["Geographical Scatter Plot", "Interactive Folium Map", "Static Maps"])
+    tab1, tab2 = st.tabs(
+        ["Geographical Scatter Plot", "Static Maps"])
     with tab1:
         fig = px.scatter_geo(world, locations="ISO3", hover_name="name",
                              hover_data=["pop_est", "Persons_Fully_Vaccinated", "% People Fully Vaccinated",
@@ -189,8 +180,6 @@ with tb3:
         st.plotly_chart(fig, theme=None, use_container_width=True)
         st.caption("The size of the bubble gives the information about pop_est: a bigger bubble indicates a larger population. The color of the bubble gives the information of % people fully vaccinated. Hover over the bubble to see vaccination info for each country. ")
 
-    with tab3:
-        st_folium(m)
     with tab2:
         with st.container():
             col1, col2, col3 = st.columns(3)
@@ -238,6 +227,16 @@ with tb3:
                                         'orientation': "horizontal"}, cmap='OrRd')
                 ax.set_axis_off()
                 st.pyplot(fig)
+    with st.expander("Click here to see the interative folium map"):
+        m = world.explore(
+            column="% People Fully Vaccinated",
+            legend=True,  # show legend
+            tooltip=["name"],  # show value in tooltip (on hover)
+            popup=["name", "Persons_Fully_Vaccinated", "% People Fully Vaccinated",
+                   "persons_vaccinated", "% People Vaccinated"],  # show all values in popup (on click)
+        )
+    # m.save("iframe/Vaccine_Dist_PPL_Vacc.html")
+        st_folium(m)
     st.write(
         "**Food for thought**: Why do Covid-19 vaccination rates remain low in most countries in Africa?")
 
