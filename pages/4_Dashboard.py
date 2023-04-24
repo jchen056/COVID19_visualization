@@ -81,11 +81,11 @@ fig.append_trace(go.Bar(x=df_n_countries["% People Vaccinated"], y=df_n_countrie
 fig.append_trace(go.Bar(x=df_n_countries["% People Fully Vaccinated"], y=df_n_countries.name, orientation='h', name="Fully Vaccinated",
                         legendgroup="group1"), 1, 1)
 
-fig.append_trace(go.Bar(x=df_n_countries["persons_vaccinated"], y=df_n_countries.name, orientation='h', name="Fully",
+fig.append_trace(go.Bar(x=df_n_countries["persons_vaccinated"], y=df_n_countries.name, orientation='h', name="w/1 Plus Dose",
                         legendgrouptitle_text="Number of People Vaccinated:",
                         legendgroup="group2"), 1, 2)
 fig.append_trace(go.Bar(x=df_n_countries["Persons_Fully_Vaccinated"], y=df_n_countries.name,
-                        orientation='h', name="w/ 1 Plus Dose", legendgroup="group3"), 1, 2)
+                        orientation='h', name="Fully Vaccinated", legendgroup="group3"), 1, 2)
 
 fig.update_layout(barmode='overlay')
 st.plotly_chart(fig)
