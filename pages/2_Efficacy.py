@@ -120,7 +120,7 @@ with tab2:
                                    "Delta Severe Disease", "Delta Infection",
                                    "Omicron Severe Disease", "Omicron Infection"]
     st.markdown(
-        "**First**, we need to retrieve the most recent data for each country and vaccine.")
+        "**First**, we need to retrieve the most recent data for each country and vaccine--finding the vaccines a country administered and the most recent data for each vaccine type.")
     st.caption(
         "Table 4: Filtered Vaccination Data for Countries in the World")
     st.dataframe(df_filtered_display[['Country', 'Date', 'Vaccine', 'Total Vaccinations',
@@ -224,3 +224,9 @@ with tab2:
     st.dataframe(df_country_efficiency2[[
         'country', 'Alpha Infection', 'Delta Infection', 'Omicron Infection']])
     df_country_efficiency2.to_csv("data/country_efficacy.csv")
+
+    st.subheader("Limitations of the Methodology")
+    st.markdown('''
+    1. Total vaccinations show the total doses of vaccine administered. It is possible that a person can get multiple doses of the same vaccine. For example, Jerry got three doses of Pfizer. No matter how many doses of vaccines a person gets,
+    we assume the vaccine efficacy is the same. 
+    2. It is also possible that a person used different vaccines. For example, Linda got both Pfizer and Moderna. We do not have the vaccine efficacy for mixed vaccine use. For simplicity, we assume that people stay with one vaccine type.''')

@@ -142,16 +142,17 @@ st.subheader(
     "What % of the Population is Susceptible to Infection and Protected from Infection?")
 df_infection = geopandas.read_file("data/infection.shp")
 with st.expander("Click here to view infection and protection rate on a global map"):
-    tb1, tb2 = st.tabs(["Infection", "Protection"])
-    with tb1:
-        m1 = df_infection.explore(column='Omicron Infection', cmap="YlGn",
-                                  tiles="CartoDB positron", tooltip='name',
-                                  popup=['name', 'pop_est',
-                                         "Persons_Fully_Vaccinated",
-                                         'Alpha Infection', 'Delta Infection', 'Omicron Infection'
-                                         ],)
-        st_folium(m1)
-    with tb2:
+    option_Inf_Pro = st.selectbox(
+        "Which one you want to see?", ("Infection", "Protection"))
+    if option_Inf_Pro == "Infection":
+        st_folium(df_infection.explore(column='Omicron Infection', cmap="YlGn",
+                                       tiles="CartoDB positron", tooltip='name',
+                                       popup=['name', 'pop_est',
+                                              "Persons_Fully_Vaccinated",
+                                              'Alpha Infection', 'Delta Infection', 'Omicron Infection'
+                                              ],))
+
+    elif option_Inf_Pro == "Protection":
         m2 = df_infection.explore(column='Omicron Protection', cmap="YlGn",
                                   tiles="CartoDB positron", tooltip='name',
                                   popup=['name', 'pop_est',
