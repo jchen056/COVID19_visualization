@@ -59,7 +59,10 @@ perc_fully_vacc = round(
 perc_ppl_vac = round(np.sum(df_n["persons_vaccinated"])/total_pop*100, 2)
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Total Vaccinations", value=str(total_dose)+" billion")
+# col1.metric("Total Vaccinations", value=str()+" billion")
+col1.metric("Total Population", value=str(round(np.sum(
+    world["pop_est"])/1000000000, 2)
+)+" billion")
 col2.metric("% People Vaccinated w/ 1 Plus Dose", value=str(perc_ppl_vac)+"%")
 col3.metric("% People Fully Vaccinated", value=str(perc_fully_vacc)+"%")
 st.caption("The data is no longer being updated. Data is as of December 28, 2022.")

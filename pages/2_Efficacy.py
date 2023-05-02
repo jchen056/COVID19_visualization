@@ -42,7 +42,7 @@ with tab1:
         "**Table2**: Covid-19 Vaccine Effectiveness at preventing(cleaned version)")
     st.dataframe(df_efficacy_displayed[['Vaccine_Manufacturer', "Alpha Severe Disease", "Alpha Infection", "Delta Severe Disease", "Delta Infection",
                                         "Omicron Severe Disease", "Omicron Infection"]])
-    st.subheader("Vaccine Efficacy Wanes over Time")
+    st.subheader("Vaccine Efficacy Wanes As Mutations Occur")
     st.markdown('''Vaccine efficacy captures''')
     st.markdown('''
     - **the prevention of infection**: a vaccine’s efficacy at stopping transmission of the virus from one person to another. A exposed person will not contract the virus, meaning that they will not develop symptoms or disease. 

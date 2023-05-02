@@ -142,9 +142,9 @@ with tab2:
     - Adding up modified Breakthrough Infection and % People Not Fully Vaccinated will result in the infection rate, % People that are susceptible to infection.
     """)
     st.markdown("""**Infection rate** can be calculated by subtracting protection from 1. Assume that unvaccinated people are susceptible to infection.
-    - 100-'Alpha Protection' will result in 'Alpha Breakthrough Infection', % people that are not protected from alpha infection.
-    - 100-'Delta Protection' will give 'Delta Breakthrough Infection'.
-    - 100-'Omicron Protection' will give 'Omicron Breakthrough Infection'.
+    1. 100-'Alpha Protection' will result in 'Alpha Breakthrough Infection', % people that are not protected from alpha infection.
+    2. 100-'Delta Protection' will give 'Delta Breakthrough Infection'.
+    3. 100-'Omicron Protection' will give 'Omicron Breakthrough Infection'.
     """)
     world["Alpha Infection"] = 100-world['Alpha Protection']
     world["Delta Infection"] = 100-world['Delta Protection']
@@ -191,7 +191,7 @@ with tab3:
     fig.append_trace(go.Bar(name="with 1 Plus Dose", y=world_display1.name, x=world_display1["% People Vaccinated"],
                             legendgrouptitle_text="% People Vaccinated", legendgroup="group", orientation='h'), 1, 1)
     fig.append_trace(go.Bar(name="Fully Vaccinated", y=world_display1.name, x=world_display1['% People Fully Vaccinated'],
-                            legendgroup="group", orientation='h'), 1, 1)
+                            orientation='h'), 1, 1)
 
     fig.append_trace(go.Bar(name="Omicron", y=world_display1.name, x=world_display1["Omicron Protection"],
                             legendgrouptitle_text="Protection %", legendgroup="group2", orientation='h'), 1, 2)
@@ -208,14 +208,14 @@ with tab3:
     fig1.append_trace(go.Bar(name="Alpha", y=world_display1.name, x=world_display1["Alpha Breakthrough Infection"],
                              legendgrouptitle_text="Breakthrough Infection %", legendgroup="group", orientation='h'), 1, 1)
     fig1.append_trace(go.Bar(name="Delta", y=world_display1.name, x=world_display1["Delta Breakthrough Infection"],
-                             legendgroup="group", orientation='h'), 1, 1)
+                             orientation='h'), 1, 1)
     fig1.append_trace(go.Bar(name="Omicron", y=world_display1.name, x=world_display1["Omicron Breakthrough Infection"],
-                             legendgroup="group", orientation='h'), 1, 1)
+                             orientation='h'), 1, 1)
 
     fig1.append_trace(go.Bar(name="Alpha", y=world_display1.name, x=world_display1["Alpha Infection"],
                              legendgrouptitle_text="Infection %", legendgroup="group2", orientation='h'), 1, 2)
     fig1.append_trace(go.Bar(name="Delta", y=world_display1.name, x=world_display1["Delta Infection"],
-                             legendgroup="group2", orientation='h'), 1, 2)
+                             orientation='h'), 1, 2)
     fig1.append_trace(go.Bar(name="Omicron", y=world_display1.name, x=world_display1["Omicron Infection"],
-                             legendgroup="group2", orientation='h'), 1, 2)
+                             orientation='h'), 1, 2)
     st.plotly_chart(fig1)
