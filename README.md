@@ -1,8 +1,10 @@
 # COVID19_visualization
 
-### Streamlit Link
+### Streamlit Link & Running locally
 
 https://jchen056-covid19-visualization-home-oa1na8.streamlit.app/
+
+running locally: streamlit run Home.py
 
 ### About GeoPandas
 
